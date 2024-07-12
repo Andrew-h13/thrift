@@ -1,0 +1,47 @@
+:root {
+  background-color: #333333;
+}
+
+/* header content*/
+.header {
+  width: calc(100% - 40px);
+  max-width: 3500px;
+  height: 50px;
+  /* border-style: ridge;
+  border-color: white; */
+
+  padding: 1rem;
+}
+
+.hInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.logo {
+  color: white;
+  align-self: flex-start;
+  margin-top: 10px;
+}
+
+.username {
+  color: white;
+  margin-top: 10px;
+}
+
+.dropCircle {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
