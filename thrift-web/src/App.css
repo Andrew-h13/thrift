@@ -1,46 +1,45 @@
 :root {
-  background-color: #333333;
+  background-color: #111111;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 body {
   margin: 0;
+  overflow-x: hidden;
 }
 
-/* header content*/
-.header {
-  width: calc(100% + 50px);
-  max-width: 3500px;
-  height: 30px;
-  /* border-style: ridge;
-  border-color: white; */
-  padding: 1rem;
-  background-color: #222;
+/* sidebar content*/
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100dvh;
+  padding: 10px 14px;
+  background: #000;
+  z-index: 100;
 }
 
 .hInfo {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  flex-direction: column;
+  height: 100vh;
 }
 
 .user {
   display: flex;
-  justify-content: space-between;
-  gap: 10px;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-top: auto;
+  padding: 60px 20px;
 }
 
 .logo {
-  color: white;
-  align-self: flex-start;
-  margin-top: 10px;
-}
-
-.username {
   color: white;
   margin-top: 10px;
 }
@@ -51,6 +50,7 @@ body {
   border: 1px solid white;
   padding: 8px 16px;
   cursor: pointer;
+  width: 100%;
 }
 
 .logButton:hover {
@@ -58,36 +58,35 @@ body {
   color: #222;
 }
 
-.dropCircle {
-  height: 40px;
-  width: 40px;
-  border-radius: 50%;
-  background-color: #444;
+/* content area */
+.content {
+  margin-left: 150px;
+  width: calc(100% - 150px);
+}
+
+/*welcoming-banner*/
+
+.welcome-banner {
+  width: 100%;
+  height: 750px;
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
 }
 
-.dropIcon {
-  font-size: 1.5rem;
-  color: white;
-}
-
-/* Main Body */
-.main-container {
+/* Category Body */
+.cat-container {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 20px;
-  margin-top: 200px;
 }
 
 .windows-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 20px;
+  grid-template-columns: repeat(5, 1fr);
+
   max-width: 1200px;
   width: 100%;
 }
@@ -97,25 +96,22 @@ body {
 .window-r {
   border: 5px solid black;
   border-radius: 8px;
-  overflow: auto; /* Enable scrolling if content overflows */
+  overflow: auto;
 }
 
 .window-l,
-.window-r {
-  height: 400px;
-}
-
+.window-r,
 .window-m {
   height: 500px;
 }
 
-/* Specific Window Styling */
 .window-l {
   background-color: #f2f2f2;
 }
 
 .window-m {
   background-color: #e6e6e6;
+  margin-top: 50px;
 }
 
 .window-r {

@@ -5,28 +5,27 @@ import "boxicons/css/boxicons.min.css";
 function App() {
   return (
     <>
-      <div className="header">
+      <div className="sidebar">
         <div className="hInfo">
           <div className="logo">
-            <label> ThriftSea </label>
+            <label>ThriftSea</label>
           </div>
           <div className="user">
-            <button className="logButton"> Sign Up</button>
+            <button className="logButton">Sign Up</button>
             <button className="logButton">Login</button>
-            <label className="username">User placeholder</label>
-            <button className="dropCircle">
-              <i className="bx bxs-tree-alt dropIcon"></i>
-            </button>
           </div>
         </div>
       </div>
-      <div className="welcome-banner"></div>
-
-      <div className="main-container">
-        <div className="windows-container">
-          <div className="window-l"></div>
-          <div className="window-m"></div>
-          <div className="window-r"></div>
+      <div className="content">
+        <div className="welcome-banner">Welcome to the Banner</div>
+        <div className="cat-container">
+          <div className="windows-container">
+            <div className="window-l">Left Window</div>
+            <div className="window-m">Middle Window</div>
+            <div className="window-r">Right Window</div>
+            <div className="window-m">Middle Window</div>
+            <div className="window-r">Right Window</div>
+          </div>
         </div>
       </div>
     </>
