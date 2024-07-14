@@ -1,5 +1,5 @@
 :root {
-  background-color: #111111;
+  background: url("../public/pictures/stressed_linen.png");
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -21,6 +21,15 @@ body {
   padding: 10px 14px;
   background: #000;
   z-index: 100;
+}
+
+.web-name {
+  background-color: #000;
+  color: #ffffff;
+  border-color: #000;
+  border-style: none;
+  cursor: pointer;
+  font-size: large;
 }
 
 .hInfo {
@@ -80,9 +89,10 @@ body {
 
 .header {
   position: absolute;
-  top: 0;
-  left: 50;
-  color: #ffffff;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
   font-size: 3em;
   text-align: center;
   padding: 1rem;
@@ -91,42 +101,48 @@ body {
 .description {
   position: absolute;
   top: 110px;
-  left: 50;
+  left: 50%;
+  transform: translateX(-50%);
   height: 100px;
   width: 700px;
-  color: #ffffff;
+  color: #fff;
   font-size: 1.5em;
   text-align: center;
   padding: 1rem;
 }
 
 .Join {
-  background-color: #ffffff;
-  color: #000;
+  background: transparent;
+  color: white;
   border: 1px solid white;
   padding: 8px 16px;
   cursor: pointer;
-}
-.Sign {
-  background-color: transparent;
-  color: #ffffff;
-  border: 1px solid white;
-  padding: 8px 16px;
-  cursor: pointer;
-}
-
-.Sign:hover {
-  background-color: white;
-  color: #000;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .Join:hover {
-  background-color: transparent;
-  color: #ffffff;
+  background: url("https://www.toptal.com/designers/subtlepatterns/uploads/vintage-wallpaper.png");
+  color: white;
 }
+
+.Sign {
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.Sign:hover {
+  background: url("https://www.toptal.com/designers/subtlepatterns/uploads/vintage-wallpaper.png");
+  color: white;
+}
+
 .button-container {
   position: absolute;
-  left: 50;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   gap: 20px;
   margin-top: 300px;
@@ -136,7 +152,7 @@ body {
 /*spacers*/
 
 .spacer1 {
-  height: 250px;
+  height: 200px;
   width: 100%;
 }
 
@@ -155,7 +171,6 @@ body {
   padding: 1rem;
   max-width: 1200px;
   width: 100%;
-  gap: 20px;
 }
 
 .window-l,
@@ -165,7 +180,7 @@ body {
   border-radius: 8px;
   overflow: auto;
   height: 450px;
-  width: 400px;
+  width: 350px;
   margin-top: 30px;
   background-color: #ffffff;
 }
@@ -173,7 +188,7 @@ body {
 .picture-window {
   background-color: #000;
   height: 350px;
-  width: 390px;
+  width: 340px;
   margin-top: 5px;
   margin-left: 5px;
 }
@@ -185,4 +200,8 @@ body {
 .pic-spacer {
   width: 200px;
   height: 15px;
+}
+
+.spacer {
+  width: 60px;
 }
