@@ -1,7 +1,12 @@
 import React from "react";
+import Sidebar from "./sidebar";
 
 const about = () => {
-  return <></>;
+  return (
+    <>
+      <Sidebar />
+    </>
+  );
 };
 
 export default about;

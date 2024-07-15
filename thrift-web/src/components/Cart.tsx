@@ -1,7 +1,12 @@
 import React from "react";
+import Sidebar from "./sidebar";
 
 const Cart = () => {
-  return <></>;
+  return (
+    <>
+      <Sidebar />
+    </>
+  );
 };
 
 export default Cart;

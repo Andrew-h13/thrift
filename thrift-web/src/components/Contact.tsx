@@ -1,7 +1,13 @@
 import React from "react";
+import Sidebar from "./sidebar";
 
 const Contact = () => {
-  return <></>;
+  return (
+    <>
+      {" "}
+      <Sidebar />
+    </>
+  );
 };
 
 export default Contact;

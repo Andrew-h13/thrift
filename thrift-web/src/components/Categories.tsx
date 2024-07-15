@@ -1,7 +1,12 @@
 import React from "react";
+import Sidebar from "./sidebar";
 
 const Categories = () => {
-  return <></>;
+  return (
+    <>
+      <Sidebar />
+    </>
+  );
 };
 
 export default Categories;

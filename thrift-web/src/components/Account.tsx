@@ -1,7 +1,12 @@
 import React from "react";
+import Sidebar from "./sidebar";
 
 const Account = () => {
-  return <></>;
+  return (
+    <>
+      <Sidebar />
+    </>
+  );
 };
 
 export default Account;
