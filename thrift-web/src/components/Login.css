@@ -79,3 +79,8 @@ input:focus {
 .spacer {
   height: 10px;
 }
+
+.content {
+  margin-left: 200px;
+  width: calc(100% - 200px);
+}

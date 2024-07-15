@@ -17,8 +17,8 @@ body {
   top: 0;
   left: 0;
   height: 100dvh;
-  width: 150px;
-  padding: 10px 14px;
+  width: 200px;
+
   background: #000;
   z-index: 100;
 }
@@ -30,6 +30,9 @@ body {
   border-style: none;
   cursor: pointer;
   font-size: large;
+  position: absolute;
+  top: 30px;
+  left: 60px;
 }
 
 .hInfo {
@@ -37,16 +40,20 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 100vh;
 }
 
 .user {
+  width: 100%;
+}
+
+.buttonBar-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
-  margin-top: auto;
-  padding: 60px 20px;
+  gap: 10px;
+  padding: 0px 0px;
+  width: 100%;
+  margin-top: 400px;
 }
 
 .logo {
@@ -57,10 +64,13 @@ body {
 .logButton {
   background-color: transparent;
   color: white;
-  border: 1px solid white;
-  padding: 8px 16px;
+  border: 1px solid transparent;
   cursor: pointer;
   width: 100%;
+  height: 50px;
+  justify-items: center;
+  align-items: center;
+  font-size: medium;
 }
 
 .logButton:hover {
@@ -68,10 +78,15 @@ body {
   color: #222;
 }
 
+.logButton.active {
+  background-color: white;
+  color: #222;
+}
+
 /* content area */
 .content {
   margin-left: 150px;
-  width: calc(100% - 150px);
+  width: calc(100% - 200px);
 }
 
 /*welcoming-banner*/
@@ -96,6 +111,7 @@ body {
   font-size: 3em;
   text-align: center;
   padding: 1rem;
+  min-width: 1000px;
 }
 
 .description {
@@ -123,6 +139,11 @@ body {
 .Join:hover {
   background: url("https://www.toptal.com/designers/subtlepatterns/uploads/vintage-wallpaper.png");
   color: white;
+}
+
+.active {
+  background-color: white;
+  color: #222;
 }
 
 .Sign {
@@ -179,16 +200,33 @@ body {
   border: 5px solid black;
   border-radius: 8px;
   overflow: auto;
-  height: 450px;
-  width: 350px;
+  height: 550px;
+  width: 370px;
   margin-top: 30px;
   background-color: #ffffff;
 }
 
-.picture-window {
-  background-color: #000;
+.picture-window1 {
+  background: url("../public/pictures/keeb.webp");
+  background-size: cover;
   height: 350px;
-  width: 340px;
+  width: 360px;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+.picture-window2 {
+  background: url("../public/pictures/shirt.webp");
+  background-size: contain;
+  height: 350px;
+  width: 360px;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+.picture-window3 {
+  background: url("../public/pictures/rand.png");
+  background-size: cover;
+  height: 350px;
+  width: 360px;
   margin-top: 5px;
   margin-left: 5px;
 }
@@ -204,4 +242,13 @@ body {
 
 .spacer {
   width: 60px;
+}
+
+.cat-label {
+  color: #fff;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
