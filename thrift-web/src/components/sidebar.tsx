@@ -6,6 +6,11 @@ const Sidebar = () => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const navigate = useNavigate();
 
+  function Logout() {
+    localStorage.clear();
+    return navigate("/Login");
+  }
+
   const handleGoToHome = () => {
     navigate("/");
     handleButtonClick(0);
@@ -45,8 +50,7 @@ const Sidebar = () => {
   };
 
   const handleGoToLogOut = () => {
-    navigate("/LogOut");
-    handleButtonClick(5);
+    Logout();
   };
 
   const [activeButton, setActiveButton] = useState<number | null>(null);

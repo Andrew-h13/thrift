@@ -6,28 +6,26 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 body {
   margin: 0;
   overflow-x: hidden;
 }
 
-/* sidebar content*/
 .sidebar {
   position: fixed;
   top: 0;
   left: 0;
-  height: 100dvh;
+  height: 100vh;
   width: 200px;
-
   background: #000;
   z-index: 100;
 }
 
 .web-name {
   background-color: #000;
-  color: #ffffff;
-  border-color: #000;
-  border-style: none;
+  color: #fff;
+  border: none;
   cursor: pointer;
   font-size: large;
   position: absolute;
@@ -51,7 +49,7 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  padding: 0px 0px;
+  padding: 0;
   width: 100%;
   margin-top: 400px;
 }
@@ -83,13 +81,11 @@ body {
   color: #222;
 }
 
-/* content area */
 .content {
-  margin-left: 150px;
+  margin-left: 200px;
   width: calc(100% - 200px);
 }
 
-/*welcoming-banner*/
 .welcome-banner {
   width: 100%;
   height: 350px;
@@ -125,18 +121,24 @@ body {
   font-size: 1.5em;
   text-align: center;
   padding: 1rem;
+  z-index: 2;
 }
 
-.Join {
+.Join,
+.Sign {
   background: transparent;
   color: white;
   border: 1px solid white;
   padding: 8px 16px;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
+  width: 160px;
+  height: 50px;
+  font-size: 1em;
 }
 
-.Join:hover {
+.Join:hover,
+.Sign:hover {
   background: url("https://www.toptal.com/designers/subtlepatterns/uploads/vintage-wallpaper.png");
   color: white;
 }
@@ -146,38 +148,64 @@ body {
   color: #222;
 }
 
-.Sign {
-  background: transparent;
-  color: white;
-  border: 1px solid white;
-  padding: 8px 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.Sign:hover {
-  background: url("https://www.toptal.com/designers/subtlepatterns/uploads/vintage-wallpaper.png");
-  color: white;
-}
-
 .button-container {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  gap: 20px;
+  gap: 100px;
   margin-top: 300px;
-  padding: 0px 40px;
+  padding: 0 40px;
+  z-index: 5;
 }
 
-/*spacers*/
-
 .spacer1 {
+  height: 500px;
+  width: 100%;
+}
+
+.spacer2 {
   height: 200px;
   width: 100%;
 }
 
-/* Category Body */
+.feature-item-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.feature-window-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 1rem;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.Fwindow {
+  border: 5px solid black;
+  border-radius: 8px;
+  overflow: auto;
+  height: 350px;
+  width: 350px;
+  margin-top: 70px;
+  background-color: #fff;
+  margin-right: 50px;
+}
+
+.cat-label {
+  height: 150px;
+  color: #fff;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
 .cat-container {
   width: 100%;
   display: flex;
@@ -203,36 +231,37 @@ body {
   height: 550px;
   width: 370px;
   margin-top: 30px;
-  background-color: #ffffff;
+  background-color: #fff;
 }
 
 .picture-window1 {
   background: url("../public/pictures/keeb.webp");
   background-size: cover;
-  height: 350px;
-  width: 360px;
-  margin-top: 5px;
-  margin-left: 5px;
 }
 .picture-window2 {
   background: url("../public/pictures/shirt.webp");
   background-size: contain;
-  height: 350px;
-  width: 360px;
-  margin-top: 5px;
-  margin-left: 5px;
 }
 .picture-window3 {
   background: url("../public/pictures/rand.png");
   background-size: cover;
-  height: 350px;
-  width: 360px;
-  margin-top: 5px;
-  margin-left: 5px;
 }
 
-.cat-name {
-  margin-top: 10px;
+.picture-window1,
+.picture-window2,
+.picture-window3 {
+  border: 5px solid #000;
+  height: 350px;
+  width: 360px;
+  margin-top: 0;
+  margin-left: 0;
+}
+
+.window-l:hover,
+.window-m:hover,
+.window-r:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
 }
 
 .pic-spacer {
@@ -244,11 +273,19 @@ body {
   width: 60px;
 }
 
-.cat-label {
-  color: #fff;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+.line {
+  width: 1000px;
+  height: 1px;
+  border: 2px solid #000;
+  position: absolute;
+  top: 1350px;
+  background-color: #000;
+}
+.line2 {
+  width: 1000px;
+  height: 1px;
+  border: 2px solid #000;
+  position: absolute;
+  top: 700px;
+  background-color: #000;
 }

@@ -1,15 +1,21 @@
 import axios from "axios";
+import { ACCESS_TOKEN } from "./constants";
 
 const api = axios.create({
   baseURL: "http://localhost:8000/api", // Django backend URL
 });
 
-export const fetchItems = async () => {
-  const response = await api.get("/items/");
-  return response.data;
-};
+api.interceptors.request.use(
+  (config) => {
+    const token = localStorage.getItem(ACCESS_TOKEN);
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}}`;
+    }
+    return config;
+  },
+  (error) => {
+    return Promise.reject(error);
+  }
+);
 
-export const createItem = async (item) => {
-  const response = await api.post("/items/", item);
-  return response.data;
-};
+export default api;

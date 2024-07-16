@@ -9,14 +9,17 @@ import {
 } from "react-router-dom";
 import { styled } from "@mui/material/styles";
 import { Typography } from "@mui/material";
-import Login from "./components/Login";
-import SignUp from "./components/SignUp";
+import Login from "./Pages/Login";
 import Sidebar from "./components/sidebar";
-import About from "./components/About";
-import Account from "./components/Account";
+import About from "./Pages/About";
+import Account from "./Pages/Account";
 import Cart from "./components/Cart";
-import Categories from "./components/Categories";
-import Contact from "./components/Contact";
+import Categories from "./Pages/Categories";
+import Contact from "./Pages/Contact";
+import NotFound from "./Pages/NotFound";
+import ProtectedRoute from "./components/ProtectedRoute";
+import SignUp from "./Pages/SignUp";
+import Bubbles from "./components/bubbles";
 
 function HomePage() {
   const navigate = useNavigate();
@@ -104,6 +107,7 @@ function HomePage() {
             At ThriftSea, we dive deep to bring you treasures without sinking
             your budget. Where thrifty meets the sea of endless possibilities!
           </p>
+
           <div className="button-container">
             <button
               className={`Join ${activeButton === 2 ? "active" : ""}`}
@@ -118,10 +122,25 @@ function HomePage() {
               Sign In
             </button>
           </div>
+          <Bubbles></Bubbles>
         </div>
-        <div className="spacer1"></div>
+        <div className="spacer2"></div>
+        <div className="cat-label">
+          <h1>Featured Items</h1>
+          <div className="line2"></div>
+        </div>
+        <div className="spacer1">
+          <div className="feature-item-container">
+            <div className="feature-window-container">
+              <div className="Fwindow"></div>
+              <div className="Fwindow"></div>
+              <div className="Fwindow"></div>
+            </div>
+          </div>
+        </div>
         <div className="cat-label">
           <h1>Shop by Category</h1>
+          <div className="line"></div>
         </div>
         <div className="cat-container">
           <div className="spacer"></div>
@@ -173,6 +192,7 @@ function App() {
         <Route path="/About" element={<About />} />
         <Route path="/Contact" element={<Contact />} />
         <Route path="/Categories" element={<Categories />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
   );
