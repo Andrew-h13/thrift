@@ -20,9 +20,64 @@ import NotFound from "./Pages/NotFound";
 import ProtectedRoute from "./components/ProtectedRoute";
 import SignUp from "./Pages/SignUp";
 import Bubbles from "./components/bubbles";
+import Slider from "./components/Slider";
+import Slide from "./components/Slider";
+import Footer from "./components/footer";
 
 function HomePage() {
   const navigate = useNavigate();
+
+  const products = [
+    {
+      id: 1,
+      name: "Product 1",
+      cards: [
+        {
+          id: 11,
+          title: "Card 1",
+          description: "Description of Card 1",
+          image: "https://i.ebayimg.com/images/g/5XUAAOSw0flknCu4/s-l1600.webp",
+        },
+        {
+          id: 12,
+          title: "Card 2",
+          description: "Description of Card 2",
+          image: "https://i.ebayimg.com/images/g/YXMAAOSwVuFkkzFx/s-l1600.webp",
+        },
+        {
+          id: 13,
+          title: "Card 3",
+          description: "Description of Card 3",
+          image:
+            "https://img.gem.app/904481723/1f/1716313249/vintage-carhartt-detroit-jacket.jpg",
+        },
+      ],
+    },
+    {
+      id: 2,
+      name: "Product 2",
+      cards: [
+        {
+          id: 21,
+          title: "Card 4",
+          description: "Description of Card 4",
+          image: "https://i.ebayimg.com/images/g/ffgAAOSwAFJmkLMD/s-l1600.webp",
+        },
+        {
+          id: 22,
+          title: "Card 5",
+          description: "Description of Card 5",
+          image: "https://i.ebayimg.com/images/g/YbQAAOSwSS1jdv5t/s-l1600.webp",
+        },
+        {
+          id: 23,
+          title: "Card 6",
+          description: "Description of Card 6",
+          image: "https://i.ebayimg.com/images/g/3o0AAOSw-F9mlrQO/s-l1600.webp",
+        },
+      ],
+    },
+  ];
 
   const AnimatedTypography = styled(Typography)`
     & {
@@ -126,18 +181,17 @@ function HomePage() {
         </div>
         <div className="spacer2"></div>
         <div className="cat-label">
-          <h1>Featured Items</h1>
+          <h1 className="text-xl bg-black">Featured Items</h1>
           <div className="line2"></div>
         </div>
         <div className="spacer1">
           <div className="feature-item-container">
             <div className="feature-window-container">
-              <div className="Fwindow"></div>
-              <div className="Fwindow"></div>
-              <div className="Fwindow"></div>
+              <Slide></Slide>
             </div>
           </div>
         </div>
+        <div className="spacer3"></div>
         <div className="cat-label">
           <h1>Shop by Category</h1>
           <div className="line"></div>
@@ -147,8 +201,8 @@ function HomePage() {
           <div className="windows-container">
             <div className="window-l">
               <div className="picture-window1"></div>
-              <h1>Electronics</h1>
-              <h5>
+              <h1 className="card-titles">Electronics</h1>
+              <h5 className="cat-des">
                 Find the latest gadgets and timeless tech at unbeatable prices.
                 From smartphones to gaming consoles, our electronics selection
                 has everything you need. Dive into deals today!
@@ -156,8 +210,8 @@ function HomePage() {
             </div>
             <div className="window-m">
               <div className="picture-window2"></div>
-              <h1>Clothing</h1>
-              <h5>
+              <h1 className="card-titles">Clothing</h1>
+              <h5 className="cat-des">
                 Update your wardrobe with our diverse clothing collection. From
                 trendy styles to classic essentials, we offer quality apparel
                 for men, women, and kids at thrift-friendly prices. Shop now!
@@ -166,8 +220,9 @@ function HomePage() {
             <div className="window-r">
               <div className="picture-window3"></div>
 
-              <h1>Miscellaneous</h1>
-              <h5>
+              <h1 className="card-titles">Miscellaneous</h1>
+
+              <h5 className="cat-des">
                 Discover unique treasures in our miscellaneous section. From
                 quirky decor to rare finds, explore a variety of items that add
                 a special touch to your life. Start your hunt today!
@@ -176,6 +231,8 @@ function HomePage() {
           </div>
         </div>
       </div>
+      <div className="spacer2"></div>
+      <Footer />
     </>
   );
 }

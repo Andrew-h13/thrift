@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import "../App.css";
 import { useNavigate } from "react-router-dom";
 
+import logo from "../pictures/thriftsea-high-resolution-logo-white-transparent.png";
+
 const Sidebar = () => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const navigate = useNavigate();
@@ -29,19 +31,9 @@ const Sidebar = () => {
     handleButtonClick(4);
   };
 
-  const handleGoToAbout = () => {
-    navigate("/About");
-    handleButtonClick(8);
-  };
-
   const handleGoToCart = () => {
     navigate("/Cart");
     handleButtonClick(6);
-  };
-
-  const handleGoToContact = () => {
-    navigate("/Contact");
-    handleButtonClick(9);
   };
 
   const handleGoToCategories = () => {
@@ -72,69 +64,68 @@ const Sidebar = () => {
       <div className="hInfo">
         <div className="user">
           <div className="logo">
-            <button className="web-name" onClick={handleGoToHome}>
-              ThriftSea
-            </button>
+            <img
+              src={logo}
+              alt="Logo"
+              className="web-logo"
+              onClick={handleGoToHome}
+            />
           </div>
           <div className="buttonBar-container">
             <button
               className={`logButton ${activeButton === 0 ? "active" : ""}`}
               onClick={handleGoToHome}
             >
+              <i className="bx bx-home-alt icon-group"></i>
               Home
             </button>
             <button
               className={`logButton ${activeButton === 1 ? "active" : ""}`}
             >
+              <i className="bx bx-search icon-group"></i>
               Search
             </button>
             <button
               className={`logButton ${activeButton === 2 ? "active" : ""}`}
               onClick={handleGoToSignUp}
             >
+              <i className="bx bx-user-plus icon-group"></i>
               Sign Up
             </button>
             <button
               className={`logButton ${activeButton === 3 ? "active" : ""}`}
               onClick={handleGoToLogin}
             >
+              <i className="bx bx-log-in icon-group"></i>
               Login
             </button>
             <button
               className={`logButton ${activeButton === 4 ? "active" : ""}`}
               onClick={handleGoToAccount}
             >
+              <i className="bx bx-user icon-group"></i>
               Account
             </button>
             <button
               className={`logButton ${activeButton === 5 ? "active" : ""}`}
               onClick={handleGoToLogOut}
             >
+              <i className="bx bx-log-out icon-group"></i>
               Log Out
             </button>
             <button
               className={`logButton ${activeButton === 6 ? "active" : ""}`}
               onClick={handleGoToCart}
             >
+              <i className="bx bx-cart icon-group"></i>
               Cart
             </button>
             <button
               className={`logButton ${activeButton === 7 ? "active" : ""}`}
               onClick={handleGoToCategories}
             >
+              <i className="bx bx-category icon-group"></i>
               Categories
-            </button>
-            <button
-              className={`logButton ${activeButton === 8 ? "active" : ""}`}
-              onClick={handleGoToAbout}
-            >
-              About Us
-            </button>
-            <button
-              className={`logButton ${activeButton === 9 ? "active" : ""}`}
-              onClick={handleGoToContact}
-            >
-              Contact Us
             </button>
           </div>
         </div>

@@ -1,0 +1,48 @@
+.footer {
+  background-color: #000;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.footer-section {
+  max-width: 300px;
+  margin-left: 10px;
+}
+
+.footer-section h4 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: bolder;
+}
+
+.footer-section p {
+  margin: 5px 0;
+}
+
+.social-links a {
+  color: #fff;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.footer-bottom {
+  margin-top: 50px;
+  margin-left: 190px;
+}
+
+.follow {
+  margin-left: 30px;
+  font-weight: bolder;
+}
+
+.icon-group {
+  font-size: x-large;
+  font-weight: bold;
+}
