@@ -20,7 +20,7 @@ interface CartItem {
 
 
 const Cart: React.FC = () => {
-  const { isCartOpen, toggleCart } = useCart();
+  const [isCartOpen, setIsCartOpen] = useState(false);
   const cartPopupRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const [cartItems, setCartItems] = useState<CartItem[]>([
@@ -36,12 +36,15 @@ const Cart: React.FC = () => {
       buttonRef.current &&
       !buttonRef.current.contains(event.target as Node)
     ) {
-      toggleCart();
+      setIsCartOpen(false);
     }
   };
 
 
- 
+
+  const toggleCart = () => {
+    setIsCartOpen(!isCartOpen);
+  };
 
   useEffect(() => {
     if (isCartOpen) {

@@ -11,18 +11,15 @@ import { styled } from "@mui/material/styles";
 import { Typography } from "@mui/material";
 import Login from "./Pages/Login";
 import Sidebar from "./components/sidebar";
-import About from "./Pages/About";
 import Account from "./Pages/Account";
 import Cart from "./components/Cart";
 import Categories from "./Pages/Categories";
-import Contact from "./Pages/Contact";
 import NotFound from "./Pages/NotFound";
 import ProtectedRoute from "./components/ProtectedRoute";
 import SignUp from "./Pages/SignUp";
 import Bubbles from "./components/bubbles";
 import Slide from "./components/Slider";
 import Footer from "./components/footer";
-import { CartProvider } from './components/Cart-context';
 
 function HomePage() {
   const navigate = useNavigate();
@@ -88,10 +85,9 @@ function HomePage() {
 
   return (
     <>
-    <CartProvider>
     <Sidebar />
     <Cart />
-    </CartProvider>
+  
 
 
       <div className="content">
@@ -137,7 +133,6 @@ function HomePage() {
         <div className="spacer2"></div>
         <div className="cat-label">
           <h1 className="text-xl bg-black">Featured Items</h1>
-          <div className="line2"></div>
         </div>
         <div className="spacer1">
           <div className="feature-item-container">
@@ -149,7 +144,6 @@ function HomePage() {
         <div className="spacer3"></div>
         <div className="cat-label">
           <h1>Shop by Category</h1>
-          <div className="line"></div>
         </div>
         <div className="cat-container">
           <div className="spacer"></div>
@@ -201,8 +195,6 @@ function App() {
         <Route path="/SignUp" element={<SignUp />} />
         <Route path="/Account" element={<Account />} />
         <Route path="/Cart" element={<Cart />} />
-        <Route path="/About" element={<About />} />
-        <Route path="/Contact" element={<Contact />} />
         <Route path="/Categories" element={<Categories />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../App.css";
 import { useNavigate } from "react-router-dom";
-import { useCart } from './Cart-context';
 
 
 import logo from "../pictures/thriftsea-high-resolution-logo-white-transparent.png";
@@ -9,7 +8,6 @@ import logo from "../pictures/thriftsea-high-resolution-logo-white-transparent.p
 const Sidebar = () => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const navigate = useNavigate();
-  const { isCartOpen, toggleCart } = useCart();
 
 
   function Logout() {
@@ -35,10 +33,6 @@ const Sidebar = () => {
     handleButtonClick(4);
   };
 
-  const handleGoToCart = () => {
-    toggleCart();
-    handleButtonClick(6);
-  };
 
   const handleGoToCategories = () => {
     navigate("/Categories");
@@ -90,6 +84,20 @@ const Sidebar = () => {
               Search
             </button>
             <button
+              className={`logButton ${activeButton === 7 ? "active" : ""}`}
+              onClick={handleGoToCategories}
+            >
+              <i className="bx bx-category icon-group"></i>
+              Categories
+            </button>
+            <button
+              className={`logButton ${activeButton === 4 ? "active" : ""}`}
+              onClick={handleGoToAccount}
+            >
+              <i className="bx bx-user icon-group"></i>
+              Account
+            </button>
+            <button
               className={`logButton ${activeButton === 2 ? "active" : ""}`}
               onClick={handleGoToSignUp}
             >
@@ -103,13 +111,7 @@ const Sidebar = () => {
               <i className="bx bx-log-in icon-group"></i>
               Login
             </button>
-            <button
-              className={`logButton ${activeButton === 4 ? "active" : ""}`}
-              onClick={handleGoToAccount}
-            >
-              <i className="bx bx-user icon-group"></i>
-              Account
-            </button>
+  
             <button
               className={`logButton ${activeButton === 5 ? "active" : ""}`}
               onClick={handleGoToLogOut}
@@ -117,20 +119,7 @@ const Sidebar = () => {
               <i className="bx bx-log-out icon-group"></i>
               Log Out
             </button>
-            <button
-              className={`logButton ${activeButton === 6 ? "active" : ""}`}
-              onClick={handleGoToCart}
-            >
-              <i className="bx bx-cart icon-group"></i>
-              Cart
-            </button>
-            <button
-              className={`logButton ${activeButton === 7 ? "active" : ""}`}
-              onClick={handleGoToCategories}
-            >
-              <i className="bx bx-category icon-group"></i>
-              Categories
-            </button>
+
           </div>
         </div>
       </div>

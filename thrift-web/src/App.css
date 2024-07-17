@@ -177,7 +177,7 @@ body {
 }
 
 .spacer2 {
-  height: 200px;
+  height: 450px;
   width: 100%;
 }
 
@@ -213,6 +213,9 @@ body {
   align-items: center;
   text-align: center;
   font-size: xx-large;
+  font-weight: bolder;
+  border: 10px solid #000;
+  background: url("https://www.toptal.com/designers/subtlepatterns/uploads/vintage-wallpaper.png");
 }
 
 .cat-container {
