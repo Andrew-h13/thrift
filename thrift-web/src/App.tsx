@@ -20,64 +20,14 @@ import NotFound from "./Pages/NotFound";
 import ProtectedRoute from "./components/ProtectedRoute";
 import SignUp from "./Pages/SignUp";
 import Bubbles from "./components/bubbles";
-import Slider from "./components/Slider";
 import Slide from "./components/Slider";
 import Footer from "./components/footer";
+import { CartProvider } from './components/Cart-context';
 
 function HomePage() {
   const navigate = useNavigate();
 
-  const products = [
-    {
-      id: 1,
-      name: "Product 1",
-      cards: [
-        {
-          id: 11,
-          title: "Card 1",
-          description: "Description of Card 1",
-          image: "https://i.ebayimg.com/images/g/5XUAAOSw0flknCu4/s-l1600.webp",
-        },
-        {
-          id: 12,
-          title: "Card 2",
-          description: "Description of Card 2",
-          image: "https://i.ebayimg.com/images/g/YXMAAOSwVuFkkzFx/s-l1600.webp",
-        },
-        {
-          id: 13,
-          title: "Card 3",
-          description: "Description of Card 3",
-          image:
-            "https://img.gem.app/904481723/1f/1716313249/vintage-carhartt-detroit-jacket.jpg",
-        },
-      ],
-    },
-    {
-      id: 2,
-      name: "Product 2",
-      cards: [
-        {
-          id: 21,
-          title: "Card 4",
-          description: "Description of Card 4",
-          image: "https://i.ebayimg.com/images/g/ffgAAOSwAFJmkLMD/s-l1600.webp",
-        },
-        {
-          id: 22,
-          title: "Card 5",
-          description: "Description of Card 5",
-          image: "https://i.ebayimg.com/images/g/YbQAAOSwSS1jdv5t/s-l1600.webp",
-        },
-        {
-          id: 23,
-          title: "Card 6",
-          description: "Description of Card 6",
-          image: "https://i.ebayimg.com/images/g/3o0AAOSw-F9mlrQO/s-l1600.webp",
-        },
-      ],
-    },
-  ];
+ 
 
   const AnimatedTypography = styled(Typography)`
     & {
@@ -138,7 +88,12 @@ function HomePage() {
 
   return (
     <>
-      <Sidebar />
+    <CartProvider>
+    <Sidebar />
+    <Cart />
+    </CartProvider>
+
+
       <div className="content">
         <div className="welcome-banner">
           <div className="header">

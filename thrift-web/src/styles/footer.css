@@ -8,12 +8,11 @@
 .footer-content {
   display: flex;
   justify-content: space-around;
-  padding: 20px;
+  padding: 20px 90px;
 }
 
 .footer-section {
   max-width: 300px;
-  margin-left: 10px;
 }
 
 .footer-section h4 {

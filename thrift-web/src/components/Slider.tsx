@@ -1,42 +1,9 @@
 import React from "react";
 import "../styles/Slider.css";
 
-const data = [
-  {
-    image: "https://i.ebayimg.com/images/g/5XUAAOSw0flknCu4/s-l1600.webp",
-    title: "Stussy Angel",
-  },
-  {
-    image: "https://i.ebayimg.com/images/g/YXMAAOSwVuFkkzFx/s-l1600.webp",
-    title: "Supreme San Francisco Box Logo",
-  },
-  {
-    image:
-      "https://img.gem.app/904481723/1f/1716313249/vintage-carhartt-detroit-jacket.jpg",
-    title: "vintage Carhartt detroit jacket",
-  },
-  {
-    image: "https://i.ebayimg.com/images/g/ffgAAOSwAFJmkLMD/s-l1600.webp",
-    title: " Vintage JNCO Jeans",
-  },
-  {
-    image: "https://i.ebayimg.com/images/g/YbQAAOSwSS1jdv5t/s-l1600.webp",
-    title: "ASUS ROG STRIX NVIDIA GeForce RTX 4090",
-  },
-  {
-    image: "https://i.ebayimg.com/images/g/3o0AAOSw-F9mlrQO/s-l1600.webp",
-    title: "Disney Lilo & Stitch snow globe",
-  },
-];
-interface ProductSliderProps {
-  products: Product[];
-}
 
-interface Product {
-  id: number;
-  name: string;
-  cards: CardData[];
-}
+
+
 
 interface CardData {
   id: number;

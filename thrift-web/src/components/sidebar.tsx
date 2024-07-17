@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from "react";
 import "../App.css";
 import { useNavigate } from "react-router-dom";
+import { useCart } from './Cart-context';
+
 
 import logo from "../pictures/thriftsea-high-resolution-logo-white-transparent.png";
 
 const Sidebar = () => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const navigate = useNavigate();
+  const { isCartOpen, toggleCart } = useCart();
+
 
   function Logout() {
     localStorage.clear();
@@ -32,7 +36,7 @@ const Sidebar = () => {
   };
 
   const handleGoToCart = () => {
-    navigate("/Cart");
+    toggleCart();
     handleButtonClick(6);
   };
 
