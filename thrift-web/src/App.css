@@ -177,7 +177,15 @@ body {
 }
 
 .spacer2 {
-  height: 450px;
+  height: 250px;
+  width: 100%;
+}
+
+.spacer2-search {
+  position: relative;
+  left: 350px;
+  top: 50px;
+  height: 150px;
   width: 100%;
 }
 

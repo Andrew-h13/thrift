@@ -14,6 +14,7 @@ const ProfilePage: React.FC = () => {
   return (
     <>
     <Sidebar />
+    <div className='content'>
     <div className="profile-container">
       <div className="profile-header">
         <h1>Profile Page</h1>
@@ -23,6 +24,8 @@ const ProfilePage: React.FC = () => {
       </div>
       {editMode ? <EditProfileForm onCancel={toggleEditMode} /> : <ProfileDetails />}
     </div>
+    </div>
+
     </>
   );
 };

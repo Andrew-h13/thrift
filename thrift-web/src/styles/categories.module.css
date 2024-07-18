@@ -1,0 +1,132 @@
+.content {
+    margin-left: 200px;
+    width: calc(100% - 200px);
+  }
+
+.header-categories{
+
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 200px;
+    background: url("https://www.toptal.com/designers/subtlepatterns/uploads/vintage-wallpaper.png");
+    border: 5px solid #000;
+}
+
+
+
+.header-items{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 500px;
+    height: 10px;
+
+}
+
+.header-items h1{
+    font-size: xx-large;
+    font-weight: bolder;
+    color: #000;
+    margin-top: 140px;
+    margin-left: 200px;
+}
+
+.spacer1{
+    width: 500px;
+    height: 50px;
+}
+
+.spacer2{
+    width: 100%;
+    height: 10px;
+    background-color: #000;
+}
+
+
+/* .search{
+    background-color: transparent;
+    border: none;
+    height: 100%;
+    font-size: medium;
+    width: 100%;
+    margin-left: 5px;
+
+}
+
+.searchbar{
+    width: 250px;
+    height: 50px;
+    background-color: transparent;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    margin-top: 140px;
+} */
+
+.iconam{
+    font-weight: bolder;
+    font-size: medium;
+}
+
+.iconf{
+    font-weight: bolder;
+    font-size: 30px;
+    color: #fff;
+}
+
+
+
+.main-container{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+.categories-sidebar{
+    background: url("https://www.toptal.com/designers/subtlepatterns/uploads/vintage-wallpaper.png");
+    width: 200px;
+    height: 675px;
+    border: 5px solid #000;
+}
+.categories-sidebar h1{
+    margin-left: 50px;
+    font-weight: bolder;
+}
+
+
+.sidebar-main button{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 0;
+    width: 100%;
+    margin-top: 10px;
+}
+.logo-container{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-container h1{
+    font-size: 100px;
+    margin-top: 10px;
+    margin-left: 10px;
+    font-weight: bolder;
+}
+
+
+.line{
+    width: 100%;
+    height: 10px;
+    position: absolute;
+    top: 130px;
+    background-color: #000;
+}
+
+

@@ -20,6 +20,7 @@ import SignUp from "./Pages/SignUp";
 import Bubbles from "./components/bubbles";
 import Slide from "./components/Slider";
 import Footer from "./components/footer";
+import Search from "./components/Search";
 
 function HomePage() {
   const navigate = useNavigate();
@@ -91,6 +92,9 @@ function HomePage() {
 
 
       <div className="content">
+        <div className="spacer2-search">
+          <Search/>
+        </div>
         <div className="welcome-banner">
           <div className="header">
             <Typography variant={"h1"} fontWeight={"bold"}>

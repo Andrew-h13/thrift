@@ -15,6 +15,8 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
+    padding: 10px 30px;
+    font-weight: bolder;
   }
   
   .edit-button {
@@ -103,3 +105,7 @@
     background-color: #dc3545;
   }
   
+  .content {
+    margin-left: 200px;
+    width: calc(100% - 200px);
+  }

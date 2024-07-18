@@ -12,7 +12,7 @@ const Sidebar = () => {
 
   function Logout() {
     localStorage.clear();
-    return navigate("/Login");
+    return navigate("/");
   }
 
   const handleGoToHome = () => {
@@ -78,17 +78,11 @@ const Sidebar = () => {
               Home
             </button>
             <button
-              className={`logButton ${activeButton === 1 ? "active" : ""}`}
-            >
-              <i className="bx bx-search icon-group"></i>
-              Search
-            </button>
-            <button
               className={`logButton ${activeButton === 7 ? "active" : ""}`}
               onClick={handleGoToCategories}
             >
               <i className="bx bx-category icon-group"></i>
-              Categories
+              Inventory
             </button>
             <button
               className={`logButton ${activeButton === 4 ? "active" : ""}`}
