@@ -21,11 +21,12 @@ import Bubbles from "./components/bubbles";
 import Slide from "./components/Slider";
 import Footer from "./components/footer";
 import Search from "./components/Search";
+import { ACCESS_TOKEN } from "./constants"; // Import your constants
 
 function HomePage() {
   const navigate = useNavigate();
-
- 
+  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
+  const [username, setUsername] = useState<string>("");
 
   const AnimatedTypography = styled(Typography)`
     & {
@@ -72,6 +73,13 @@ function HomePage() {
     if (storedActiveButton) {
       setActiveButton(Number(storedActiveButton));
     }
+
+    // Check if the user is logged in
+    const token = localStorage.getItem(ACCESS_TOKEN);
+    if (token) {
+      setIsLoggedIn(true);
+      setUsername("User");
+    }
   }, []);
 
   const handleGoToLogin = () => {
@@ -86,14 +94,12 @@ function HomePage() {
 
   return (
     <>
-    <Sidebar />
-    <Cart />
-  
-
+      <Sidebar />
+      <Cart />
 
       <div className="content">
         <div className="spacer2-search">
-          <Search/>
+          <Search />
         </div>
         <div className="welcome-banner">
           <div className="header">
@@ -118,20 +124,38 @@ function HomePage() {
             your budget. Where thrifty meets the sea of endless possibilities!
           </p>
 
-          <div className="button-container">
-            <button
-              className={`Join ${activeButton === 2 ? "active" : ""}`}
-              onClick={handleGoToSignUp}
+          {isLoggedIn ? (
+            <div
+              style={{
+                marginTop: "280px",
+                padding: "10px",
+                backgroundColor: "#f0f0f0",
+                borderRadius: "5px",
+                textAlign: "center",
+                color: "#333",
+                fontSize: "24px",
+                fontWeight: "bold",
+              }}
             >
-              Join For Free
-            </button>
-            <button
-              className={`Sign ${activeButton === 3 ? "active" : ""}`}
-              onClick={handleGoToLogin}
-            >
-              Sign In
-            </button>
-          </div>
+              <p>Welcome, {username}!</p>
+            </div>
+          ) : (
+            <div className="button-container">
+              <button
+                className={`Join ${activeButton === 2 ? "active" : ""}`}
+                onClick={handleGoToSignUp}
+              >
+                Join For Free
+              </button>
+              <button
+                className={`Sign ${activeButton === 3 ? "active" : ""}`}
+                onClick={handleGoToLogin}
+              >
+                Sign In
+              </button>
+            </div>
+          )}
+
           <Bubbles></Bubbles>
         </div>
         <div className="spacer2"></div>
@@ -197,7 +221,14 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/Login" element={<Login />} />
         <Route path="/SignUp" element={<SignUp />} />
-        <Route path="/Account" element={<Account />} />
+        <Route
+          path="/Account"
+          element={
+            <ProtectedRoute>
+              <Account />
+            </ProtectedRoute>
+          }
+        />
         <Route path="/Cart" element={<Cart />} />
         <Route path="/Categories" element={<Categories />} />
         <Route path="*" element={<NotFound />} />

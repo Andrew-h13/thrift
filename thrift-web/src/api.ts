@@ -1,15 +1,15 @@
 import axios from "axios";
 import { ACCESS_TOKEN } from "./constants";
 
-const api = axios.create({
-  baseURL: "http://localhost:8000/api", // Django backend URL
+const myapp = axios.create({
+  baseURL: "http://localhost:8000", // Django backend URL
 });
 
-api.interceptors.request.use(
+myapp.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem(ACCESS_TOKEN);
     if (token) {
-      config.headers.Authorization = `Bearer ${token}}`;
+      config.headers.Authorization = `Bearer ${token}`;
     }
     return config;
   },
@@ -18,4 +18,4 @@ api.interceptors.request.use(
   }
 );
 
-export default api;
+export default myapp;
