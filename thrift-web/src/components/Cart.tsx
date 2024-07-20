@@ -14,23 +14,21 @@ const Cart: React.FC = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const cartPopupRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
-  const [cartItems, setCartItems] = useState<CartItem[]>([
-    {
-      id: 1,
-      name: "Sample Item 1",
-      quantity: 1,
-      price: 10,
-      imageUrl: "https://via.placeholder.com/50",
-    },
-    {
-      id: 2,
-      name: "Sample Item 2",
-      quantity: 2,
-      price: 20,
-      imageUrl: "https://via.placeholder.com/50",
-    },
-  ]);
+  const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
+  const fetchCartItems = async () => {
+    try {
+      const response = await fetch("/myapp/cart/items/");
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      const data: CartItem[] = await response.json();
+      console.log("Fetched cart items:", data);
+      setCartItems(data);
+    } catch (error) {
+      console.error("Error fetching cart items:", error);
+    }
+  };
   const handleClickOutside = (event: MouseEvent) => {
     if (
       cartPopupRef.current &&
@@ -47,6 +45,8 @@ const Cart: React.FC = () => {
   };
 
   useEffect(() => {
+    fetchCartItems();
+
     if (isCartOpen) {
       document.addEventListener("mousedown", handleClickOutside);
     } else {
@@ -86,17 +86,26 @@ const Cart: React.FC = () => {
             <div className="form-container">
               <div className="cart-header">Your Cart</div>
               <div className="cart-body">
-                {cartItems.map((item) => (
-                  <div key={item.id} className="cart-item">
-                    <img
-                      src={item.imageUrl}
-                      alt={item.name}
-                      className="cart-item-image"
-                    />
-                    <div className="cart-item-name">{item.name}</div>
-                    <div className="cart-item-quantity">x {item.quantity}</div>
-                  </div>
-                ))}
+                {cartItems.length === 0 ? (
+                  <p>Your cart is empty.</p>
+                ) : (
+                  cartItems.map((item) => (
+                    <div key={item.id} className="cart-item">
+                      <img
+                        src={item.imageUrl}
+                        alt={item.name}
+                        className="cart-item-image"
+                      />
+                      <div className="cart-item-name">{item.name}</div>
+                      <div className="cart-item-quantity">
+                        x {item.quantity}
+                      </div>
+                      <div className="cart-item-price">
+                        ${item.price.toFixed(2)}
+                      </div>
+                    </div>
+                  ))
+                )}
               </div>
               <div className="cart-total">
                 Total: ${calculateTotal().toFixed(2)}
