@@ -1,10 +1,6 @@
 import React from "react";
 import "../styles/Slider.css";
 
-
-
-
-
 interface CardData {
   id: number;
   title: string;
@@ -89,7 +85,7 @@ const Slide = () => {
                 <p className="card-description">{card.description2}</p>
                 <div className="check-out">
                   <p className="price-text">{card.price}</p>
-                  <button className="card-button">add to cart</button>
+                  <div className="card-button">add to cart</div>
                 </div>
               </div>
             ))}

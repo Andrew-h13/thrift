@@ -6,23 +6,24 @@ import myapp from "../api";
 import { ACCESS_TOKEN, REFRESH_TOKEN } from "../constants";
 import "../styles/form.css";
 
-interface components {
+interface Components {
   route: string;
   method: "login" | "register";
 }
 
-const Form: React.FC<components> = ({ route, method }) => {
+const Form: React.FC<Components> = ({ route, method }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = async (e: { preventDefault: () => void }) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     setLoading(true);
     e.preventDefault();
 
     try {
       const res = await myapp.post(route, {
+        // Use the route prop here
         username,
         password,
       });
@@ -34,7 +35,6 @@ const Form: React.FC<components> = ({ route, method }) => {
         navigate("/login");
       }
     } catch (error) {
-      alert(error);
     } finally {
       setLoading(false);
     }
@@ -58,7 +58,7 @@ const Form: React.FC<components> = ({ route, method }) => {
             </h1>
             <input
               className="form-input"
-              type="username"
+              type="text" // Changed to "text" as "username" is not a valid type
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               placeholder="Username"
@@ -96,7 +96,6 @@ const Form: React.FC<components> = ({ route, method }) => {
           </form>
         </div>
       </div>
-      );
     </>
   );
 };

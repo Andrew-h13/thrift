@@ -2,7 +2,7 @@ import axios from "axios";
 import { ACCESS_TOKEN } from "./constants";
 
 const myapp = axios.create({
-  baseURL: "http://localhost:8000", // Django backend URL
+  baseURL: "http://localhost:8000",
 });
 
 myapp.interceptors.request.use(
