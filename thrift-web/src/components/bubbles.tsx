@@ -3,7 +3,6 @@ import "../styles/bubbles.css";
 
 const Bubbles: React.FC = () => {
   const bubbles = Array.from({ length: 20 }).map((_, i) => {
-    // Generate random RGBA color
     const fillOpacity = 0.3 + Math.random() * 0.7;
     const fillColor = `rgba(${Math.random() * 255}, ${Math.random() * 255}, ${
       Math.random() * 255
