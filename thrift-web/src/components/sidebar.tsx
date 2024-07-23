@@ -41,10 +41,10 @@ const Sidebar = () => {
     handleButtonClick(4);
   };
 
-  const handleGoToCategories = () => {
-    navigate("/Categories");
-    handleButtonClick(7);
-  };
+  // const handleGoToCategories = () => {
+  //   navigate("/Categories");
+  //   handleButtonClick(7);
+  // };
 
   const handleGoToLogOut = () => {
     localStorage.removeItem(ACCESS_TOKEN);
@@ -78,13 +78,13 @@ const Sidebar = () => {
               <i className="bx bx-home-alt icon-group"></i>
               Home
             </button>
-            <button
+            {/* <button
               className={`logButton ${activeButton === 7 ? "active" : ""}`}
               onClick={handleGoToCategories}
             >
               <i className="bx bx-category icon-group"></i>
               Inventory
-            </button>
+            </button> */}
             {isLoggedIn && (
               <button
                 className={`logButton ${activeButton === 4 ? "active" : ""}`}

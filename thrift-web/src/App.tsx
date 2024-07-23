@@ -21,7 +21,7 @@ import Bubbles from "./components/bubbles";
 import Slide from "./components/Slider";
 import Footer from "./components/footer";
 import Search from "./components/Search";
-import { ACCESS_TOKEN } from "./constants"; 
+import { ACCESS_TOKEN } from "./constants";
 
 function HomePage() {
   const navigate = useNavigate();
@@ -229,7 +229,7 @@ function App() {
           }
         />
         <Route path="/Cart" element={<Cart />} />
-        <Route path="/Categories" element={<Categories />} />
+        {/* <Route path="/Categories" element={<Categories />} /> */}
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
