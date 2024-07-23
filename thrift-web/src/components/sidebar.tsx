@@ -11,7 +11,6 @@ const Sidebar = () => {
   const [activeButton, setActiveButton] = useState<number | null>(null);
 
   useEffect(() => {
-    // Check the authentication status on component mount
     const accessToken = localStorage.getItem(ACCESS_TOKEN);
     const refreshToken = localStorage.getItem(REFRESH_TOKEN);
     setIsLoggedIn(!!accessToken && !!refreshToken);
