@@ -21,7 +21,7 @@ import Bubbles from "./components/bubbles";
 import Slide from "./components/Slider";
 import Footer from "./components/footer";
 import Search from "./components/Search";
-import { ACCESS_TOKEN } from "./constants"; // Import your constants
+import { ACCESS_TOKEN } from "./constants"; 
 
 function HomePage() {
   const navigate = useNavigate();
@@ -74,7 +74,6 @@ function HomePage() {
       setActiveButton(Number(storedActiveButton));
     }
 
-    // Check if the user is logged in
     const token = localStorage.getItem(ACCESS_TOKEN);
     if (token) {
       setIsLoggedIn(true);
