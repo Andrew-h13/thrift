@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import myapp from "../api"; // Import the Axios instance you configured
+import myapp from "../api"; 
 import { ACCESS_TOKEN } from "../constants";
-import "../styles/profile.css"; // Assuming you have some CSS styles
+import "../styles/profile.css";
 import Sidebar from "../components/sidebar";
 
 const Account: React.FC = () => {
