@@ -23,7 +23,6 @@ const Form: React.FC<Components> = ({ route, method }) => {
 
     try {
       const res = await myapp.post(route, {
-        // Use the route prop here
         username,
         password,
       });
@@ -58,7 +57,7 @@ const Form: React.FC<Components> = ({ route, method }) => {
             </h1>
             <input
               className="form-input"
-              type="text" // Changed to "text" as "username" is not a valid type
+              type="text" 
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               placeholder="Username"
